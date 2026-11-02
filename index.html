@@ -248,7 +248,7 @@ ${doc?`<div class="fx"><p class="sub mt">🔓 ${L('Access code','رمز الوص
 function qr(seed){let s=+seed||1,n=25,o='';const r=()=>(s=(s*1103515245+12345)%2147483648)/2147483648,P=[[0,0],[n-7,0],[0,n-7]],fp=(x,y)=>P.find(p=>x>=p[0]&&x<p[0]+7&&y>=p[1]&&y<p[1]+7);
 for(let y=0;y<n;y++)for(let x=0;x<n;x++){const p=fp(x,y);let on=p?Math.max(Math.abs(x-p[0]-3),Math.abs(y-p[1]-3))!==2:r()>.52;if(on)o+=`<rect x="${x}" y="${y}" width="1" height="1"/>`}
 return `<svg viewBox="-1 -1 27 27" width="200" height="200" style="background:#fff;padding:8px;border-radius:16px;border:1px solid var(--bd)" fill="#176B87" shape-rendering="crispEdges">${o}</svg>`}
-const BASE='https://claude.ai/artifact/YZVoavB42QXVGpwXZhP8AU';
+const BASE='https://maryam555654.github.io/Healio/';
 const lnk=p=>BASE+'#doctor-'+p;
 function qrMods(t){try{const q=qrcode(0,'M');q.addData(t);q.make();return q}catch(e){return null}}
 function qrView(p){const q=qrMods(lnk(p));if(!q)return `<div class="empty">${L('QR needs an internet connection. Use the code below.','يحتاج QR إنترنت. استخدم الرمز بالأسفل.')}</div>`;const n=q.getModuleCount();let o='';for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(q.isDark(r,c))o+=`<rect x="${c}" y="${r}" width="1" height="1"/>`;return `<svg viewBox="-2 -2 ${n+4} ${n+4}" width="230" height="230" style="background:#fff;border-radius:16px;max-width:100%;border:1px solid var(--bd)" fill="#0f4f66" shape-rendering="crispEdges" role="img" aria-label="QR code">${o}</svg>`}
